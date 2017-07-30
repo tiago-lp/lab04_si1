@@ -261,7 +261,7 @@
         mainCtrl.logout = function logout() {
             UserService.logout().then(function success() {
                 AuthService.load().then(function(){
-                    $state.go('login');
+                    $state.go('landing_page');
                 });
             });
         };
