@@ -2,7 +2,7 @@
 (function() {
 	var app = angular.module('app');
 
-	app.controller('SigninController', function SigninController(UserService, $state, $mdToast) {
+	app.controller('SigninController', function SigninController(AuthService, UserService, $state, $mdToast) {
 		var signinCtrl = this;
 
 		signinCtrl.registerForm = {};
@@ -15,6 +15,16 @@
 				showToast('Email já cadastrado no sistema');
 			});
 		}
+
+		function redirect() {
+			if(AuthService.user) {
+				if(AuthService.user.logged) {
+					$state.go('app.init');
+				}
+			}
+		}
+
+		redirect();
 
 		function showToast(msg) {
             $mdToast.show(

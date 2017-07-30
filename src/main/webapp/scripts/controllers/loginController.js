@@ -11,7 +11,7 @@
 			UserService.login(loginCtrl.loginForm).then(function success() {
 				loginCtrl.loginForm = {};
 				AuthService.load().then(function(){
-					window.location.replace("#/");
+					window.location.replace("#/init");
 
 				});
 			}, function error() {
@@ -23,6 +23,16 @@
 			UserService.logout();
 			loginCtrl.loginForm = {};
 		}
+
+		function redirect() {
+			if(AuthService.user) {
+				if(AuthService.user.logged) {
+					$state.go('app.init');
+				}
+			}
+		}
+
+		redirect();
 
 		function showToast(msg) {
             $mdToast.show(

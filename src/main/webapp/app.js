@@ -19,8 +19,16 @@
               }
           }
       })
-      .state("app.init", {
+      .state("landing_page", {
         url: "/",
+        views: {
+          main: {
+            templateUrl: "views/landing_page.html"
+          }
+        }
+      })
+      .state("app.init", {
+        url: "/init",
         views: {
           content: {
             templateUrl: 'views/init.html',
@@ -69,7 +77,7 @@
           }
         }
       });
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/init');
       $locationProvider.html5Mode(false);
     });
 

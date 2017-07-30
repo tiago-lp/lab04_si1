@@ -1,0 +1,94 @@
+<head>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Theme CSS -->
+    <link href="styles/landing_page.css" rel="stylesheet">
+</head>
+<body id="page-top" class="index">
+    <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#" target="_self">My Series</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top" target="_self"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about" target="_self">Sobre</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#login" target="_self">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="intro-header" id="maincontent" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="styles/space.png" alt="">
+                    <div class="intro-text">
+                        <h1 class="name intro-message">My Series</h1>
+                        <hr class="intro-divider">
+                        <span class="skills intro-message">Lab04-SI1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Sobre</h2>
+                    <hr>
+                    <p>"MySeries" é a quarta atividade de laboratório da disciplina Sistemas
+                    de Informação I do curso de Ciência da Computação da UFCG.
+                    Neste laboratório foi feito o deploy da aplicação
+                    construída anteriormente no terceiro laboratório.
+                    Para usar a aplicação basta clica em entrar 
+                    e fazer login (ou criar uma conta e fazer login, caso não tenha).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Cadastre-se ou faça login</h2>
+                    <hr>
+                    <p>Clique no botão abaixo para continuar.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a ui-sref="login" class="btn btn-success btn-lg">
+                        <i></i> Entrar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Tiago Pereira - lab04_SI1 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/landing_page.js"></script>
+</body>
+</html>
