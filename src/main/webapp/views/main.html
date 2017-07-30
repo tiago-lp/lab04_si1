@@ -1,0 +1,46 @@
+<div ng-if="mainCtrl.isLogged()">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <md-menu>
+              <md-button ng-click="$mdMenu.open($event)" class="md-primary md-warn md-hue-3" aria-label="User menu">
+                <md-icon>person</md-icon>
+              </md-button>
+              <md-menu-content>
+                <md-menu-item><br></md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="mainCtrl.go('app.home')">
+                        <md-icon md-font-icon="md">play_circle_outline</md-icon>
+                          Minhas Séries
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="mainCtrl.go('app.watchlist')">
+                        <md-icon md-font-icon="md">visibility</md-icon>
+                          Watch List
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="mainCtrl.logout()">
+                        <md-icon md-font-icon="md">power_settings_new</md-icon>
+                          Logout
+                    </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+        </div>
+      <div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div></div>
+            <div class="form-group">
+              <input type="text" placeholder="Pesquisar série" class="form-control" ng-model="mainCtrl.currentKeyWord">
+            </div>
+            <button type="submit" class="btn btn-warning" ng-click="mainCtrl.search()">Pesquisar</button>
+          </form>
+        </div>  
+      </div>
+    </div>
+  </nav>
+  <div flex ui-view="content"></div>
+</div>

@@ -1,0 +1,29 @@
+<div layout-fill md-colors="{background: 'grey-900'}" layout="column" layout-align="center">
+   <div layout="row" layout-wrap layout-align="center">
+    <div class="padded" md-whiteframe>
+    <md-card lex-gt-xs="50">
+      <md-toolbar md-colors="{background: 'grey-800'}" layout="row">
+        <h1 class="md-toolbar-tools">Faça seu cadastro para continuar</h1>
+      </md-toolbar>
+      <md-content layout-gt-sm="column" layout-padding>
+        <md-input-container>
+              <label>Nome</label>
+              <input name="Name" ng-model="signinCtrl.registerForm.name" type="name" required>
+          </md-input-container>
+          <md-input-container>
+                <label>Email</label>
+                <input name="Email" ng-model="signinCtrl.registerForm.email" type="email" required>
+            </md-input-container>
+          <md-input-container flex-gt-sm>
+            <label>Senha</label>
+            <input name="Senha" ng-model="signinCtrl.registerForm.password" type="password" required>
+          </md-input-container>
+        <section layout="column" layout-align="center" layout-wrap>
+        <md-button ng-click="signinCtrl.register()" md-colors="{background: 'grey-900'}">Cadastrar-se</md-button>
+        <md-button ng-click="null" ui-sref="login" md-colors="{background: 'grey-900'}">Fazer login</md-button>
+        </section>
+      </md-content>
+    </md-card>
+    </div>
+  </div>
+</div>

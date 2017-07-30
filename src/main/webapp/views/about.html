@@ -1,0 +1,44 @@
+<md-dialog aria-label="Info Serie" ng-controller="MainController as mainCtrl">
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>{{mainCtrl.currentSerie.Title}}</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="mainCtrl.cancel()">
+            <md-icon aria-label="Close dialog">close</md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content>
+        <div class="md-dialog-content">
+          <img id="imagesize" ng-if="mainCtrl.currentSerie.Poster != 'N/A'" src={{mainCtrl.currentSerie.Poster}}>
+          <img title="{{serie.Title}}" id="imagesize" ng-if="mainCtrl.currentSerie.Poster == 'N/A'" src="http://v0.static.betalabs.com.br/wilson-591da56985027/ecommerce/belcosmeticos/img/unavailable.jpg">
+          <p><b>Sinopse: </b>
+            {{mainCtrl.currentSerie.Plot}}
+          </p>
+          <p><b>Classificação etária: </b>
+          {{mainCtrl.currentSerie.Rated}}
+          </p>
+          <p><b>Avaliação do imdb: </b>
+          {{mainCtrl.currentSerie.imdbRating}}
+          </p>
+          <p><b>Minha avaliação: </b>
+          {{mainCtrl.currentSerie.myRating}}
+          </p>
+          <p><b>Último episódio visto: </b>
+          {{mainCtrl.currentSerie.lastEp}}
+          </p>
+        </div>
+      </md-dialog-content>
+      <md-dialog-actions layout="row">
+        <span flex></span>
+          <input ng-model="mainCtrl.lastEp" type="text" class="form-control" placeholder="Último EP visto">
+              <button class="btn btn-primary" type="submit" ng-click="mainCtrl.addLastEp(mainCtrl.currentSerie)">
+                Adicionar
+              </button>
+          <input type="number" class="form-control" name="quantity" min="1" max="10" placeholder="Nota" ng-model="mainCtrl.myRating">
+            <button type="submit" class="btn btn-primary" ng-click="mainCtrl.addRating(mainCtrl.currentSerie)">Avaliar</button>
+      </md-dialog-actions>
+    </form>
+</md-dialog>

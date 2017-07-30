@@ -1,0 +1,24 @@
+<div class="jumbotron text-center">
+	<div ng-if="mainCtrl.mySeries.length > 0">
+		<h1>Séries que você acompanha</h1>
+	</div>
+	<div ng-if="mainCtrl.mySeries.length == 0">
+		<h1>No momento você não acompanha nenhuma série</h1>
+	</div>
+</div>
+<div class="tab-pane">
+	<div ng-repeat= "serie in mainCtrl.mySeries">
+	    <div class="col-lg-3">
+	    	<div id="flex">
+		        <div id="sizeThumbnail" class="thumbnail grow">
+		          <img title="{{serie.Title}}" id="imagesize" ng-if="serie.Poster != 'N/A'" src={{serie.Poster}}>
+		          <img title="{{serie.Title}}" id="imagesize" ng-if="serie.Poster == 'N/A'" src="http://v0.static.betalabs.com.br/wilson-591da56985027/ecommerce/belcosmeticos/img/unavailable.jpg">
+		          <div id="button">
+		          	<button class="btn btn-info btn-block" ng-click="mainCtrl.getInfoSerie($event, serie)">Info</button>
+		            <button class="btn btn-danger btn-block" ng-click="mainCtrl.removeFromPerfil($event, serie)">Remover</button>
+		          </div>
+		        </div>
+	        </div>
+	    </div>
+  	</div>
+</div>

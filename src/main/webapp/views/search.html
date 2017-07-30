@@ -1,0 +1,25 @@
+<div class="jumbotron text-center">
+	<div ng-if="mainCtrl.isValidSearch()">
+		<h1>Resultado da pesquisa: '{{mainCtrl.keyWord}}'</h1>
+	</div>
+	<div ng-if="!(mainCtrl.isValidSearch())">
+		<h1>Nenhum resultado para '{{mainCtrl.keyWord}}'
+	</div>
+</div>
+<div class="tab-pane">
+	<div ng-repeat= "serie in mainCtrl.searchList">
+	    <div class="col-lg-3">
+	    	<div id="flex">
+		        <div id="sizeThumbnail" class="thumbnail grow">
+		          <img title="{{serie.Title}}" id="imagesize" ng-if="serie.Poster != 'N/A'" src={{serie.Poster}}>
+		          <img title="{{serie.Title}}" id="imagesize" ng-if="serie.Poster == 'N/A'" src="http://v0.static.betalabs.com.br/wilson-591da56985027/ecommerce/belcosmeticos/img/unavailable.jpg">
+		          <div id="button">
+		          	<button class="btn btn-info btn-block" ng-click="mainCtrl.getSinopse($event, serie)">Sinopse</button>
+		            <button class="btn btn-primary btn-block" ng-click="mainCtrl.addToPerfil($event, serie)">Adicionar ao Meu Perfil</button>
+		            <button class="btn btn-warning btn-block" ng-click="mainCtrl.addToWatchList($event, serie)">Adicionar a Watchlist</button>
+		          </div>
+		        </div>
+	        </div>
+	    </div>
+  	</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="jumbotron text-center">
+	<div ng-if="mainCtrl.watchList.length > 0">
+		<h1>Séries que você pretende assistir</h1>
+	</div>
+	<div ng-if="mainCtrl.watchList.length == 0">
+		<h1>Nenhuma série na sua WatchList</h1>
+	</div>
+</div>
+<div class="tab-pane">
+	<div ng-repeat= "serie in mainCtrl.watchList">
+	    <div class="col-lg-3">
+	    	<div id="flex">
+		        <div id="sizeThumbnail" class="thumbnail grow" title="{{serie.Title}}">
+		          <img id="imagesize" ng-if="serie.Poster != 'N/A'" src={{serie.Poster}}>
+		          <img id="imagesize" ng-if="serie.Poster == 'N/A'" src="http://v0.static.betalabs.com.br/wilson-591da56985027/ecommerce/belcosmeticos/img/unavailable.jpg">
+		          <div id="button">
+		          	<button class="btn btn-info btn-block" ng-click="mainCtrl.getSinopse($event, serie)">Sinopse</button>
+		          	<button class="btn btn-primary btn-block" ng-click="mainCtrl.addToPerfil($event, serie)">Adicionar ao Meu Perfil</button>
+		            <button class="btn btn-danger btn-block" ng-click="mainCtrl.removeFromWatchList($event, serie)">Remover</button>
+		          </div>
+		        </div>
+	        </div>
+	    </div>
+  	</div>
+</div>

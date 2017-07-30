@@ -1,0 +1,25 @@
+<div layout-fill md-colors="{background: 'grey-900'}" layout="column" layout-align="center">
+   <div layout="row" layout-wrap layout-align="center">
+    <div class="padded" md-whiteframe>
+    <md-card lex-gt-xs="50">
+      <md-toolbar md-colors="{background: 'grey-800'}" layout="row">
+        <h1 class="md-toolbar-tools">Faça login para continuar</h1>
+      </md-toolbar>
+      <md-content layout-gt-sm="column" layout-padding>
+        <md-input-container>
+              <label>Email</label>
+              <input name="Email" ng-model="loginCtrl.loginForm.email" type="email" required>
+          </md-input-container>
+          <md-input-container flex-gt-sm>
+            <label>Senha</label>
+            <input name="Senha" ng-model="loginCtrl.loginForm.password" type="password" required>
+          </md-input-container>
+        <section layout="column" layout-align="center" layout-wrap>
+        <md-button ng-click="loginCtrl.login()" md-colors="{background: 'grey-900'}">Entrar</md-button>
+        <md-button ng-click="null" ui-sref="signin" md-colors="{background: 'grey-900'}">Cadastrar-se</md-button>
+        </section>
+      </md-content>
+    </md-card>
+    </div>
+  </div>
+</div>
