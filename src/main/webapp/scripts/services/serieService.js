@@ -11,7 +11,7 @@
 
 		service.getSeries = function getSeries(name) {
 		    var deferred = $q.defer();
-		    $http.get('http://www.omdbapi.com/?s=' + name + '&type=series&apikey=93330d3c')
+		    $http.get('https://www.omdbapi.com/?s=' + name + '&type=series&apikey=93330d3c')
 		    	.then(function success(response) {
 		                deferred.resolve(response);
 		            }, function error(response) {
@@ -22,7 +22,7 @@
 
 		service.getInfoSerie = function getInfoSerie(imdbID) {
 			var deferred = $q.defer();
-			$http.get('http://www.omdbapi.com/?i=' + imdbID + '&plot=full&apikey=93330d3c')
+			$http.get('https://www.omdbapi.com/?i=' + imdbID + '&plot=full&apikey=93330d3c')
 				.then(function success(response) {
 					deferred.resolve(response);
 				}, function error(response) {
