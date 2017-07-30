@@ -77,7 +77,7 @@
           }
         }
       });
-      $urlRouterProvider.otherwise('/init');
+      $urlRouterProvider.otherwise('/');
       $locationProvider.html5Mode(false);
     });
 
@@ -86,7 +86,7 @@
 
            service.responseError = function() {
                if (AuthService.user.logged == false) {
-                   $state.go("login");
+                   $state.go("landing_page");
                } 
                return $q.reject(response);
            };
